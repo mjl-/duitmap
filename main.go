@@ -1,3 +1,4 @@
+// Map with zoom/pan using raster tiles, created with duit.
 package main
 
 import (
