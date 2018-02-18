@@ -464,11 +464,11 @@ func main() {
 		case e := <-dui.Inputs:
 			dui.Input(e)
 
-		case err := <-dui.Error:
-			if err == nil {
+		case err, ok := <-dui.Error:
+			if !ok {
 				return
 			}
-			log.Printf("dui: %s\n", err)
+			log.Printf("duit: %s\n", err)
 
 		case ti := <-tileimages:
 			log.Printf("have tileimage %v\n", ti.tileLink)
